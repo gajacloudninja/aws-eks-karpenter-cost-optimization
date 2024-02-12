@@ -1,0 +1,50 @@
+apiVersion: karpenter.sh/v1beta1
+kind: NodePool
+metadata:
+  name: cost-optimized-spot-pool
+spec:
+  template:
+    metadata:
+      # Labels are arbitrary key-values that are applied to all nodes in the pool
+      labels:
+        cost-optimized: "true"
+    spec:
+      # References the Cloud Provider's NodeClass resource, see cloud provider specific documentation
+      nodeClassRef:
+        name: default
+      requirements:
+      - key: kubernetes.io/arch
+        operator: In
+        values: ["amd64"]
+      - key: karpenter.sh/capacity-type
+        operator: In
+        values: ["spot"]
+      - key: karpenter.k8s.aws/instance-category
+        operator: In
+        values: ["c", "m", "r", "t"]
+      # Provisioned nodes will have these taints
+      # Taints may prevent pods from scheduling if they are not tolerated by the pod.
+      taints:
+        - key: deployment
+          effect: NoSchedule
+          value: cost-optimized-spot-pool
+  disruption:
+    # If using `WhenEmpty`, Karpenter will only consider nodes for consolidation that contain no workload pods
+    consolidationPolicy: WhenEmpty
+    # The amount of time Karpenter should wait after discovering a consolidation decision
+    # This value can currently only be set when the consolidationPolicy is 'WhenEmpty'
+    # You can choose to disable consolidation entirely by setting the string value 'Never' here
+    consolidateAfter: 2m
+    # The amount of time a Node can live on the cluster before being removed
+    # Avoiding long-running Nodes helps to reduce security vulnerabilities as well as to reduce the chance of issues that can plague Nodes with long uptimes such as file fragmentation or memory leaks from system processes
+    # You can choose to disable expiration entirely by setting the string value 'Never' here
+    expireAfter: 48h
+  # Resource limits constrain the total size of the cluster.
+  # Limits prevent Karpenter from creating new instances once the limit is exceeded.
+  limits:
+    cpu: "500"
+    memory: 500Gi
+  # Priority given to the NodePool when the scheduler considers which NodePool
+  # to select. Higher weights indicate higher priority when comparing NodePools.
+  # Specifying no weight is equivalent to specifying a weight of 0.
+  weight: 2
