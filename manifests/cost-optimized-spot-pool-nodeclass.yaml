@@ -1,0 +1,15 @@
+apiVersion: karpenter.k8s.aws/v1beta1
+kind: EC2NodeClass
+metadata:
+  name: default
+spec:
+  amiFamily: AL2 # Amazon Linux 2
+  role: "karpenter-demo-workers" # IAM role to use for the node identity & for Karpenter to launch nodes
+  subnetSelectorTerms:
+    - tags:
+        Name: "karpenter-demo-subnet-private*" #  subnets to attach to instances
+  securityGroupSelectorTerms:
+    - tags:
+        Name: "eks-cluster-sg-karpenter-demo" # security group that has to be attached to nodes
+  amiSelectorTerms:
+    - id: ami-0937d28aa1608c597  # AMI to be used for the instances
