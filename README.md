@@ -6,9 +6,9 @@ This repository showcases a demo deployment utilizing Karpenter's NodePools and 
 
 ## For a detailed explanation of Karpenter's concepts and benefits, refer to the blog post:
 
-### Unleash the Power of Karpenter: Automating AWS EKS Scaling and Cost Optimization:  https://medium.com/@gaja.devops/unleash-the-power-of-karpenter-automating-aws-eks-scaling-and-cost-optimization-7e236319eda4
+### [Unleash the Power of Karpenter: Automating AWS EKS Scaling and Cost Optimization]([url](https://medium.com/@gaja.devops/unleash-the-power-of-karpenter-automating-aws-eks-scaling-and-cost-optimization-7e236319eda4))
 
-### Karpenter NodePools and NodeClasses:  https://medium.com/@gaja.devops/karpenter-mastery-nodepools-nodeclasses-for-workload-nirvana-bc89850fa934
+### [Karpenter NodePools and NodeClasses]([url](https://medium.com/@gaja.devops/karpenter-mastery-nodepools-nodeclasses-for-workload-nirvana-bc89850fa934))
 
 # Repository Contents:
 
