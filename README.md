@@ -1,4 +1,4 @@
-# aws-eks-karpenter-cost-optimization
+# AWS Eks karpenter cost optimization
 ## Cost-Efficient Kubernetes with Karpenter: Dive In!
 This repository showcases a demo deployment utilizing Karpenter's NodePools and NodeClasses on AWS EKS. Experience automating your node provisioning, scaling, and cost optimization with Spot Instances.
 
