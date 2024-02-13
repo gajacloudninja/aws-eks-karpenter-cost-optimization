@@ -13,7 +13,7 @@ This repository showcases a demo deployment utilizing Karpenter's NodePools and 
 # Repository Contents:
 
 ### manifests: Kubernetes manifests for NodePools, NodeClasses, and deployments.
-docs: [Additional documentation and instructions]([url](https://karpenter.sh/docs/getting-started/getting-started-with-karpenter/))
+Additional documentation and instructions - https://karpenter.sh/v0.34/getting-started/getting-started-with-karpenter/
 
 ### Getting Started:
 Ensure you have an active EKS cluster and Karpenter installed.
