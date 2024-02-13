@@ -5,16 +5,17 @@ This repository showcases a demo deployment utilizing Karpenter's NodePools and 
 # Blog Reference:
 
 ## For a detailed explanation of Karpenter's concepts and benefits, refer to the blog post:
-[Unleash the Power of Karpenter: Automating AWS EKS Scaling and Cost Optimization](https://www.linkedin.com/pulse/unleash-power-karpenter-automating-aws-eks-scaling-cost-chandgadkar-u4zpc/)
 
-Karpenter NodePools and NodeClasses:  https://www.linkedin.com/posts/gajanan-chandgadkar_kubernetes-eks-karpenter-activity-7162806402376196096-bw4z/
+### Unleash the Power of Karpenter: Automating AWS EKS Scaling and Cost Optimization:  https://medium.com/@gaja.devops/unleash-the-power-of-karpenter-automating-aws-eks-scaling-and-cost-optimization-7e236319eda4
+
+### Karpenter NodePools and NodeClasses:  https://medium.com/@gaja.devops/karpenter-mastery-nodepools-nodeclasses-for-workload-nirvana-bc89850fa934
 
 # Repository Contents:
 
-manifests: Kubernetes manifests for NodePools, NodeClasses, and deployments.
+### manifests: Kubernetes manifests for NodePools, NodeClasses, and deployments.
 docs: [Additional documentation and instructions]([url](https://karpenter.sh/docs/getting-started/getting-started-with-karpenter/))
 
-Getting Started:
+### Getting Started:
 Ensure you have an active EKS cluster and Karpenter installed.
 Follow the instructions in the deploy directory to set up the demo.
 Explore the deployed resources and logs to understand Karpenter's functionality.
